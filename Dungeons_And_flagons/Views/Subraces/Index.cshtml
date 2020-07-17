@@ -33,8 +33,8 @@
         <tbody>
             @foreach (var item in Model)
             {
-            <tr>
-                <td>
+                <tr>
+                    <td>
                     @Html.DisplayFor(modelItem => item.MainRace)
                 </td>
                 <td>
@@ -44,9 +44,11 @@
                     @Html.DisplayFor(modelItem => item.Description)
                 </td>
 
+                @if (User.Identity.IsAuthenticated) { 
                 <td>
                     <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
                 </td>
+                }
 
                 @if (User.IsInRole("Administrativo"))
                 {

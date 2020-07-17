@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace Dungeons_And_Flagons.Controllers
 {
 
-    [Authorize]
+    
     public class SpellsController : Controller
     {
         private readonly DafDB _context;
@@ -50,8 +50,9 @@ namespace Dungeons_And_Flagons.Controllers
             return View(spells);
         }
 
-        [Authorize(Roles ="Administrativo")]
+
         // GET: Spells/Create
+        
         public IActionResult Create()
         {
             ViewData["Source"] = new SelectList(_context.Sources, "ID", "ID");
@@ -63,7 +64,7 @@ namespace Dungeons_And_Flagons.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Administrativo")]
+        
 
         public async Task<IActionResult> Create([Bind("ID,Name,Level,CastingTime,Range,Components,Duration,School,Description,Source")] Spells spells)
         {
@@ -77,7 +78,7 @@ namespace Dungeons_And_Flagons.Controllers
             return View(spells);
         }
 
-        [Authorize(Roles = "Administrativo")]
+        
 
         // GET: Spells/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -101,7 +102,7 @@ namespace Dungeons_And_Flagons.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Administrativo")]
+        
 
         public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Level,CastingTime,Range,Components,Duration,School,Description,Source")] Spells spells)
         {
@@ -134,7 +135,7 @@ namespace Dungeons_And_Flagons.Controllers
             return View(spells);
         }
 
-        [Authorize(Roles = "Administrativo")]
+        
 
         // GET: Spells/Delete/5
         public async Task<IActionResult> Delete(int? id)
@@ -154,7 +155,7 @@ namespace Dungeons_And_Flagons.Controllers
 
             return View(spells);
         }
-        [Authorize(Roles = "Administrativo")]
+        
 
         // POST: Spells/Delete/5
         [HttpPost, ActionName("Delete")]

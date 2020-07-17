@@ -28,6 +28,7 @@ namespace Dungeons_And_Flagons.Controllers
             return View(await _context.Sources.ToListAsync());
         }
 
+        [AllowAnonymous]
         // GET: Sources/Details/5
         public async Task<IActionResult> Details(int? id)
         {

@@ -41,6 +41,7 @@
                 <th></th>
             </tr>
         </thead>
+
         <tbody>
             @foreach (var item in Model)
             {
@@ -67,10 +68,10 @@
                     @Html.DisplayFor(modelItem => item.School)
                 </td>
                 
-
+                @if (User.Identity.IsAuthenticated) { 
                 <td>
                     <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                </td>
+                </td>}
 
                 @if (User.IsInRole("Administrativo"))
                 {

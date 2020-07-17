@@ -59,10 +59,11 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Category)
             </td>
-
+            @if (User.Identity.IsAuthenticated) { 
             <td>
                 <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
             </td>
+            }
 
             @if (User.IsInRole("Administrativo"))
             {

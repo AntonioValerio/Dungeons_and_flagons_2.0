@@ -23,13 +23,13 @@ namespace Dungeons_And_Flagons.Controllers
 
         // GET: Subraces
         [AllowAnonymous]
-
         public async Task<IActionResult> Index()
         {
             return View(await _context.Subraces.ToListAsync());
         }
 
         // GET: Subraces/Details/5
+        [AllowAnonymous]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -48,7 +48,7 @@ namespace Dungeons_And_Flagons.Controllers
         }
 
         // GET: Subraces/Create
-        [Authorize(Roles = "Administrativo")]
+        
 
         public IActionResult Create()
         {
@@ -60,7 +60,7 @@ namespace Dungeons_And_Flagons.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Administrativo")]
+        
 
         public async Task<IActionResult> Create([Bind("ID,MainRace,Name,Description,Features,Source")] Subraces subraces)
         {
@@ -74,7 +74,7 @@ namespace Dungeons_And_Flagons.Controllers
         }
 
         // GET: Subraces/Edit/5
-        [Authorize(Roles = "Administrativo")]
+        
 
         public async Task<IActionResult> Edit(int? id)
         {
@@ -96,7 +96,7 @@ namespace Dungeons_And_Flagons.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Administrativo")]
+        
 
         public async Task<IActionResult> Edit(int id, [Bind("ID,MainRace,Name,Description,Features,Source")] Subraces subraces)
         {
@@ -129,7 +129,7 @@ namespace Dungeons_And_Flagons.Controllers
         }
 
         // GET: Subraces/Delete/5
-        [Authorize(Roles = "Administrativo")]
+        
 
         public async Task<IActionResult> Delete(int? id)
         {
@@ -151,7 +151,6 @@ namespace Dungeons_And_Flagons.Controllers
         // POST: Subraces/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Administrativo")]
 
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
