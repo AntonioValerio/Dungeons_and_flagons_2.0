@@ -16,6 +16,7 @@ namespace Dungeons_And_Flagons.Areas.Identity
         {
             builder.ConfigureServices((context, services) => {
             });
+           
         }
     }
 }

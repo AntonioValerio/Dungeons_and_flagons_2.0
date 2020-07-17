@@ -38,6 +38,8 @@ namespace Dungeons_And_Flagons
 
             services.AddControllersWithViews();
             services.AddRazorPages();
+           
+            
 
         }
 

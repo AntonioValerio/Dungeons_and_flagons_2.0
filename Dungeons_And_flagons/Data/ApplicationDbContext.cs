@@ -17,7 +17,7 @@ namespace Dungeons_And_Flagons.Data
         /// <summary>
         /// nome da pessoa q se regista, e posteriormente, autentica
         /// </summary>
-        public string Nome { get; set; }
+        //public string Nome { get; set; }
 
 
         /// <summary>

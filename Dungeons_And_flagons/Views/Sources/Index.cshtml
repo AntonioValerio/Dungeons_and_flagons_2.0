@@ -27,9 +27,11 @@
             <th>
                 @Html.DisplayNameFor(model => model.Summary)
             </th>
+            @if (User.Identity.IsAuthenticated) { 
             <th>
                 Donwload!
             </th>
+            }
             <th>
                 @Html.DisplayNameFor(model => model.Category)
             </th>
@@ -57,11 +59,15 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Category)
             </td>
+
+            <td>
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+            </td>
+
             @if (User.IsInRole("Administrativo"))
             {
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
                     <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
                 </td>
             }
