@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Dungeons_And_Flagons.Models.Sources>
+
+@{
+    ViewData["Title"] = "Source Books";
+}
+
+<h1>All the books!</h1>
+
+
+
+@if (User.IsInRole("Administrativo"))
+{
+    // User.Identity.IsAuthenticated --> sabe se o Utilizador está ou não autenticado
+   //  User.IsInRole("Administrativo") --> identifica se o utilizador está Autenticado e se pertence, ou não, a este Role
+<p>
+    <a asp-action="Create">Add a book scribe</a>
+</p>
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Summary)
+            </th>
+            <th>
+                Donwload!
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Summary)
+            </td>
+             @if (User.Identity.IsAuthenticated)
+              {
+                 <td>
+
+                    <a download="@Html.DisplayFor(modelItem => item.Path)"> Get it!</a>
+
+                </td>}
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            @if (User.IsInRole("Administrativo"))
+            {
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            }
+        </tr>
+        }
+    </tbody>
+</table>
