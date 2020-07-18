@@ -87,6 +87,7 @@ namespace Dungeons_And_Flagons.Data
                 Description = "In the reckonings of most worlds,humans are the youngest of the common races,late to arrive on the world scene and short - lived in comparison to dwarves," +
                 "elves,an d dragons.Perhaps it is because of their shorter lives that they strive to achieve as much as they can in the years they are given.Or maybe they feel they have something to prove to the elder races,and that’s why they build their mighty empires on the foundation of conquest and trade.Whatever drives them,humans are the innovators,the achievers,and the pioneers of the worlds.",
                 Features = "Increases all ability Scores by 1,your base walking speed is 30 feet,you can speak,read and write common and one language of your choice",
+                Spellcasting= false ,
                 Source = 1
             },
 
@@ -98,6 +99,7 @@ namespace Dungeons_And_Flagons.Data
                 Name = "Wood Elf",
                 Description = "As a wood elf, you have keen senses and intuition, and your fleet feet carry you quickly and stealthily through your native forests.This category includes the wild elves(grugach) of Greyhawk and the Kagonesti of Dragonlance, as well as the races called wood elves in Greyhawk and the Forgotten Realms.In Faerûn, wood elves(also called wild elves, green elves, or forest elves) are reclusive and distrusting of non - elves.",
                 Features = " Your Dexterity increases by 2 and your wisdom increases by 1, your base walking speed is 35 feet, You have darkvision, proficiency with Perception Skill, Advantage against being Charmed, and magic can’t put you to sleep, Trance, you dont sleep you meditate for 4 hours and gain the beneficts of a long rest, You can speak, read, write common and elvish.",
+                Spellcasting = false,
                 Source = 2
             },
 
@@ -108,6 +110,7 @@ namespace Dungeons_And_Flagons.Data
                  Name = "Lightfoot",
                  Description = "As a Lightfoot Halfling, you can easily hide from notice, even using other people as cover.You’re inclined to be affable and get along well with others. Lightfoots are more prone to wanderlust than other Halflings, and often dwell alongside other races or take up a nomadic life.",
                  Features = "Your Dexterity increases by 2, your Charisma increases by 1, As a Halfling your size is Small, your base walking speed is 25 feet, you are Lucky, whenever you roll a 1 on the d20 for na attack roll, ability check or Saving throw you can reroll the die, Brave, you have advantage against being Frightened. Nimbleness, you can move through the space of a creature one size bigger than you.",
+                 Spellcasting = false,
                  Source = 2
              },
 
@@ -118,6 +121,7 @@ namespace Dungeons_And_Flagons.Data
                  Name = "Duergar",
                  Description = "Physically similar to other dwarves in some ways, duergar are wiry and lean, with black eyes and bald heads, with the males growing long, unkempt, gray beards. Duergar value toil above all else. Showing emotions other than grim determination or wrath is frowned on in their culture, but they can sometimes seem joyful when at work. They have the typical dwarven appreciation for order, tradition, and impeccable craftsmanship, but their goods are purely utilitarian, disdaining aesthetic or artistic value.",
                  Features = "Your Consitution Increases by 2 , and your strenght by 1, your base walking speed is 25 feet. Superior Darkvision, your darkvision has a radius of 120 feet.You have advantage on on Saving Throws agains’t poison and you have Resistance against poison Damage. Sunlight Sensitivity, you have disadvantage on attack rolls and perception checks that rely on sight when you are under direct sunlight. You can read,write,and speak common,swarvish and undercommon",
+                 Spellcasting = true,
                  Source = 3
              });
 

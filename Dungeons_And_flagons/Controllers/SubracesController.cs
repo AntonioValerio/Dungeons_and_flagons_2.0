@@ -62,7 +62,7 @@ namespace Dungeons_And_Flagons.Controllers
         [ValidateAntiForgeryToken]
         
 
-        public async Task<IActionResult> Create([Bind("ID,MainRace,Name,Description,Features,Source")] Subraces subraces)
+        public async Task<IActionResult> Create([Bind("ID,MainRace,Name,Description,Features,Spellcasting,Source")] Subraces subraces)
         {
             if (ModelState.IsValid)
             {
@@ -97,8 +97,7 @@ namespace Dungeons_And_Flagons.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         
-
-        public async Task<IActionResult> Edit(int id, [Bind("ID,MainRace,Name,Description,Features,Source")] Subraces subraces)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,MainRace,Name,Description,Features,Spellcasting,Source")] Subraces subraces)
         {
             if (id != subraces.ID)
             {
@@ -130,7 +129,6 @@ namespace Dungeons_And_Flagons.Controllers
 
         // GET: Subraces/Delete/5
         
-
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

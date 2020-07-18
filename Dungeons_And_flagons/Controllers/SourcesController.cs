@@ -46,7 +46,7 @@ namespace Dungeons_And_Flagons.Controllers
 
             return View(sources);
         }
-        [Authorize(Roles = "Administrativo")]
+      
 
         // GET: Sources/Create
         public IActionResult Create()
@@ -59,7 +59,7 @@ namespace Dungeons_And_Flagons.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Administrativo")]
+      
 
         public async Task<IActionResult> Create([Bind("ID,Name,Summary,Permission,Path,Category")] Sources sources)
         {
@@ -71,7 +71,7 @@ namespace Dungeons_And_Flagons.Controllers
             }
             return View(sources);
         }
-        [Authorize(Roles = "Administrativo")]
+        
 
         // GET: Sources/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -94,7 +94,7 @@ namespace Dungeons_And_Flagons.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Administrativo")]
+        
 
         public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Summary,Permission,Path,Category")] Sources sources)
         {
@@ -127,7 +127,7 @@ namespace Dungeons_And_Flagons.Controllers
         }
 
         // GET: Sources/Delete/5
-        [Authorize(Roles = "Administrativo")]
+      
 
         public async Task<IActionResult> Delete(int? id)
         {
@@ -149,7 +149,7 @@ namespace Dungeons_And_Flagons.Controllers
         // POST: Sources/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Administrativo")]
+     
 
         public async Task<IActionResult> DeleteConfirmed(int id)
         {

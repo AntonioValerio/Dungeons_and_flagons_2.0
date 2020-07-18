@@ -21,9 +21,9 @@ namespace Dungeons_And_Flagons.Models
 
         public String Features { get; set; }
 
+        public Boolean Spellcasting { get; set; }
         
         //public int permissions { get; set; }
-
 
         //FK to Source
         [ForeignKey(" Book")]

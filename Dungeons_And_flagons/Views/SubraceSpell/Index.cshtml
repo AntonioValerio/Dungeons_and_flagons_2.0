@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Dungeons_And_Flagons.Models.SubraceSpell>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Race
+            </th>
+            <th>
+                Spells
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Race.Name)
+                    @Html.DisplayFor(modelItem => item.SubraceID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tome.Name)
+                    @Html.DisplayFor(modelItem => item.SpellID)
+                </td>                     
+            </tr>
+        }
+    </tbody>
+</table>
