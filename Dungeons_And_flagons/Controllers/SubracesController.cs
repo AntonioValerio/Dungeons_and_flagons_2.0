@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Dungeons_And_Flagons.Data;
 using Dungeons_And_Flagons.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 namespace Dungeons_And_Flagons.Controllers
 {
@@ -15,10 +16,12 @@ namespace Dungeons_And_Flagons.Controllers
     public class SubracesController : Controller
     {
         private readonly DafDB _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public SubracesController(DafDB context)
+        public SubracesController(DafDB context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: Subraces
@@ -49,7 +52,7 @@ namespace Dungeons_And_Flagons.Controllers
 
         // GET: Subraces/Create
         
-
+        [Authorize(Roles ="Administrator")]
         public IActionResult Create()
         {
             return View();
@@ -60,7 +63,7 @@ namespace Dungeons_And_Flagons.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        
+        [Authorize(Roles = "Administrator")]
 
         public async Task<IActionResult> Create([Bind("ID,MainRace,Name,Description,Features,Spellcasting,Source")] Subraces subraces)
         {
@@ -74,8 +77,8 @@ namespace Dungeons_And_Flagons.Controllers
         }
 
         // GET: Subraces/Edit/5
-        
 
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -96,7 +99,7 @@ namespace Dungeons_And_Flagons.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Edit(int id, [Bind("ID,MainRace,Name,Description,Features,Spellcasting,Source")] Subraces subraces)
         {
             if (id != subraces.ID)
@@ -128,7 +131,7 @@ namespace Dungeons_And_Flagons.Controllers
         }
 
         // GET: Subraces/Delete/5
-        
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -149,7 +152,7 @@ namespace Dungeons_And_Flagons.Controllers
         // POST: Subraces/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var subraces = await _context.Subraces.FindAsync(id);

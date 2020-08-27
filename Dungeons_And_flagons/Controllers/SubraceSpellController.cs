@@ -12,6 +12,7 @@ namespace Dungeons_And_Flagons.Controllers
     {
         private readonly DafDB _context;
 
+
         public SubraceSpellController(DafDB context)
         {
             _context = context;
