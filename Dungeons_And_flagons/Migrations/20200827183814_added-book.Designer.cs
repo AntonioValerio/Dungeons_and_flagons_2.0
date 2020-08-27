@@ -4,14 +4,16 @@ using Dungeons_And_Flagons.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Dungeons_And_Flagons.Migrations
 {
     [DbContext(typeof(DafDB))]
-    partial class DafDBModelSnapshot : ModelSnapshot
+    [Migration("20200827183814_added-book")]
+    partial class addedbook
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
