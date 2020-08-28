@@ -8,7 +8,7 @@
 
 
 
-@if (User.IsInRole("Administrativo"))
+@if (User.IsInRole("Admin"))
 {
     // User.Identity.IsAuthenticated --> sabe se o Utilizador está ou não autenticado
    //  User.IsInRole("Administrativo") --> identifica se o utilizador está Autenticado e se pertence, ou não, a este Role
@@ -61,16 +61,16 @@
             </td>
             @if (User.Identity.IsAuthenticated) { 
             <td>
-                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a>
             </td>
             }
 
-            @if (User.IsInRole("Administrativo"))
+            @if (User.IsInRole("Admin"))
             {
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                    <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-                </td>
+        <td>
+             |  <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+            <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+        </td>
             }
         </tr>
         }

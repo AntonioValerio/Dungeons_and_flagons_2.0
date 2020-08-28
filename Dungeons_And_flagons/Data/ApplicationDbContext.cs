@@ -1,6 +1,4 @@
-﻿
-
-using System;
+﻿using System;
 using Dungeons_And_Flagons.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -17,7 +15,7 @@ namespace Dungeons_And_Flagons.Data
         /// <summary>
         /// nome da pessoa q se regista, e posteriormente, autentica
         /// </summary>
-        //public string Nome { get; set; }
+        public string Nome { get; set; }
 
 
         /// <summary>
@@ -230,6 +228,7 @@ namespace Dungeons_And_Flagons.Data
 
         }
 
+       
         public DbSet<Classes> Classes { get; set; }
         public DbSet<ClasseSpells> ClasseSpells { get; set; }
         public DbSet<Sources> Sources { get; set; }

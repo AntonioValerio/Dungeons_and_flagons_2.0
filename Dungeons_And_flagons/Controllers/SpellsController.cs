@@ -57,7 +57,7 @@ namespace Dungeons_And_Flagons.Controllers
 
 
         // GET: Spells/Create
-        [Authorize(Roles ="Administrator")]
+        [Authorize(Roles ="Admin")]
         public IActionResult Create()
         {
             ViewData["Source"] = new SelectList(_context.Sources, "ID", "ID");
@@ -69,7 +69,7 @@ namespace Dungeons_And_Flagons.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Admin")]
 
         public async Task<IActionResult> Create([Bind("ID,Name,Level,CastingTime,Range,Components,Duration,School,Description,Source")] Spells spells)
         {
@@ -84,7 +84,7 @@ namespace Dungeons_And_Flagons.Controllers
         }
 
 
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Admin")]
         // GET: Spells/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -107,7 +107,7 @@ namespace Dungeons_And_Flagons.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Admin")]
 
         public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Level,CastingTime,Range,Components,Duration,School,Description,Source")] Spells spells)
         {
@@ -141,7 +141,7 @@ namespace Dungeons_And_Flagons.Controllers
         }
 
 
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Admin")]
         // GET: Spells/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -165,7 +165,7 @@ namespace Dungeons_And_Flagons.Controllers
         // POST: Spells/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var spells = await _context.Spells.FindAsync(id);
