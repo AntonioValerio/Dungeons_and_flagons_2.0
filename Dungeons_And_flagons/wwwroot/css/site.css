@@ -1,19 +1,87 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+
+/*start of header stuff*/
+#header {
+    background-color: #B5651d;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    top: 0;
+} 
+
+
+    #header .navbar-brand {
+        color: #222222;
+    }
+    #header .nav-link {
+        color: #222222;
+    }
+/*end of header stuff*/
+
+/*start of container stuff*/
+#container {
+        margin-bottom: 65px;
+        margin-top: 70px;
+        width: 800px;
+        min-height: 480px;
+        margin-left: auto;
+        margin-right: auto;
+        color: #000;
+        background-color: rgba(255,255,255,0.8);
+        padding: 20px;
+        border-radius: 10px;
+        
+}
+/*ordering books races and spells on home page*/
+
+.text-center > div {
+    text-transform: uppercase;
+    color: black;
+    font-size: 1.2rem;
+    width: 28%;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-size: contain;
+} 
+
+.one {
+    margin-left: 2%;
+    float: left;
+    background-image: url('https://vignette.wikia.nocookie.net/harrypotterwizardsunite/images/e/eb/Quill_of_Acceptance_and_Book_of_Admittance.png/revision/latest?cb=20190625205758');
 }
 
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
+.two {
+    margin-left: 5%;
+    float: left;
+    background-image: url('https://vignette.wikia.nocookie.net/elderscrolls/images/e/e3/MAGINVInvisibility.png/revision/latest?cb=20120513035634');
+}
+
+.three {
+    margin-right: 2%;
+    float: right;
+    background-image: url('https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/256/420/618/636271789409776659.png');
+}
+
+/*remove bullet points */
+#container ul {
+    list-style-type: none;
+}
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+    color: #fff;
 }
 
 .btn-primary {
-  color: #fff;
+  color: #000;
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
@@ -59,13 +127,35 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    background-image: url('https://cdn.hipwallpaper.com/i/56/40/KpSm63.jpg');
+    width: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
 }
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 45px; /* Vertically center the text there */
+    background-color: #B5651d;
+}
+#footer .container {
+    color: #222222;
+}
+
+/*special chef touch*/
+a {
+    color: #222222;
+}
+h2 {
+    padding: 15px;
+}
+
+li{
+    padding: 5px;
 }

@@ -87,7 +87,7 @@ namespace Dungeons_And_Flagons
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
-            createRoles(serviceProvider).Wait();
+            
         }
 
         
